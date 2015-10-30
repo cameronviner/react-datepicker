@@ -66,6 +66,16 @@ var Calendar = React.createClass( {
   },
 
   increaseMonth: function() {
+
+    //if the maxDate month is less than or equal then return
+    //if the minDate month is greater 
+
+    if( new DateUtil(this.state.maxDate).isBefore(this.state.date.addMonth()) ) {
+      console.log('in the true');
+    } else {
+      console.log('in the else');
+    }
+
     this.setState( {
       date: this.state.date.addMonth()
     } );
